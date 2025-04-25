@@ -4,7 +4,7 @@ import { Suspense } from "react";
 async function PostDetailsPage({ params }) {
   const postId = params.postId;
 
-  const loadingJsx = <h1>Loading...</h1>;
+  const loadingJsx = <h1>wait...</h1>;
 
   return (
     <div style={{ padding: "50px" }}>

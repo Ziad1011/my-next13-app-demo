@@ -1,13 +1,14 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter, Roboto_Mono } from "next/font/google";
 import "./globals.css";
+import Link from "next/link";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const robotoMono = Roboto_Mono({
+  variable: "--font-roboto-mono",
   subsets: ["latin"],
 });
 
@@ -19,7 +20,24 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body className={`${inter.variable} ${robotoMono.variable}`}>
+        <nav
+          style={{
+            width: "100%",
+            background: "teal",
+            padding: "10px",
+            color: "white",
+            display: "flex",
+            gap: "100px",
+            justifyContent: "center",
+            alignItems: "center",
+            fontSize: "30px",
+          }}
+        >
+          <Link href="/">Home</Link>
+          <Link href="/posts">Posts</Link>
+          <Link href="/articles">Articles</Link>
+        </nav>
         {children}
       </body>
     </html>
